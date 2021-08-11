@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "foo/")
+@RequestMapping(value = "foo")
 public class FooController {
 
-  @RequestMapping(value = "{name}", method = RequestMethod.GET)
+  @RequestMapping(value = "/{name}", method = RequestMethod.GET)
   public Foo getFoo(@PathVariable final String name) {
     return new Foo(name, new Random().nextInt(), true);
   }
